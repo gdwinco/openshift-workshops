@@ -10,7 +10,7 @@ var routes = require('./routes/index');
 var app = express();
 
 var Ajv = require('ajv');
-var ajv = new Ajv({"allErrors: true});
+var ajv = new Ajv({allErrors: true});
 require('ajv-keywords')(ajv);
 var case1 = ajv.validate({ instanceof: 'RegExp' }, /.*/); // true
 console.log('>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>case1?: ',case1);
