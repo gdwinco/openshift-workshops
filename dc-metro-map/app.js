@@ -9,8 +9,8 @@ var routes = require('./routes/index');
 
 var app = express();
 
-//var Ajv = require('ajv');
-//var ajv = new Ajv;
+var Ajv = require('ajv');
+var ajv = new Ajv;
 //require('ajv-keywords')(ajv);
 //ajv.validate({ instanceof: 'RegExp' }, /.*/); // true
 //ajv.validate({ instanceof: 'RegExp' }, '.*'); // false
