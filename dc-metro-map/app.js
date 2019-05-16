@@ -10,10 +10,12 @@ var routes = require('./routes/index');
 var app = express();
 
 var Ajv = require('ajv');
-var ajv = new Ajv;
+var ajv = new Ajv({"allErrors: true});
 require('ajv-keywords')(ajv);
-ajv.validate({ instanceof: 'RegExp' }, /.*/); // true
-ajv.validate({ instanceof: 'RegExp' }, '.*'); // false
+var case1 = ajv.validate({ instanceof: 'RegExp' }, /.*/); // true
+console.log('>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>case1?: ',case1);
+var case2 = ajv.validate({ instanceof: 'RegExp' }, '.*'); // false
+console.log('>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>?: ',case2);
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
