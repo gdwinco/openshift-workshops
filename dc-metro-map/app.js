@@ -11,9 +11,9 @@ var app = express();
 
 var Ajv = require('ajv');
 var ajv = new Ajv;
-//require('ajv-keywords')(ajv);
-//ajv.validate({ instanceof: 'RegExp' }, /.*/); // true
-//ajv.validate({ instanceof: 'RegExp' }, '.*'); // false
+require('ajv-keywords')(ajv);
+ajv.validate({ instanceof: 'RegExp' }, /.*/); // true
+ajv.validate({ instanceof: 'RegExp' }, '.*'); // false
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
